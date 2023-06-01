@@ -4,17 +4,20 @@
   var BLACK = 2
 
   var GraphAlgorithm = {
-    //
-    // Detect loop in a directed graph, use graph coloring algorithm.
-    //
-    // @param vertices - array of vertices, a vertex is either an integer or a
-    //                   string
-    // @param edges - array of edges, an edge is an array of length 2 which
-    //                marks the source and destination vertice.
-    //                i.e., [source, dest]
-    //
-    // @return { hasLoop: true, loop: [...] }
-    //
+    /**
+     * Detects loops in a directed graph using a graph coloring algorithm.
+     *
+     * @param {Array} vertices - An array of vertices. Each vertex can be either 
+     *    an integer or a string.
+     * @param {Array} edges - An array of edges. Each edge is represented as an array of length 2, 
+     *    specifying the source and destination vertices. Format: [source, destination].
+     *
+     * @returns {Object} An object indicating whether a loop is present and, if so, the vertices 
+     *    forming the loop. The return value has the following structure:
+     *     - hasLoop: A boolean value indicating whether a loop is present in the graph.
+     *     - loop: An array of vertices forming the loop, listed in the order they are encountered 
+     *       during traversal.
+     */
     hasLoop: function(vertices, edges) {
       var colors = {}
       var path = []
